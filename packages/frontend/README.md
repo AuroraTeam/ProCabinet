@@ -1,6 +1,6 @@
-# Настройка 
+# Настройка
 
-Все настройки выполняются в файле [.env](https://github.com/AuroraTeam/EasyCabinet/blob/master/packages/frontend/.env)
+Все настройки выполняются в файле [.env](https://github.com/AuroraTeam/ProCabinet/blob/master/packages/frontend/.env)
 
 - `VITE_API_URL` - Адрес `backend` сервера
 

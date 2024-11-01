@@ -1,17 +1,17 @@
 {
-  "name": "easy-cabinet",
+  "name": "pro-cabinet",
   "private": true,
   "workspaces": [
     "packages/*"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AuroraTeam/EasyCabinet.git"
+    "url": "git+https://github.com/AuroraTeam/ProCabinet.git"
   },
   "author": "AuroraTeam",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/AuroraTeam/EasyCabinet/issues"
+    "url": "https://github.com/AuroraTeam/ProCabinet/issues"
   },
-  "homepage": "https://github.com/AuroraTeam/EasyCabinet#readme"
+  "homepage": "https://github.com/AuroraTeam/ProCabinet#readme"
 }

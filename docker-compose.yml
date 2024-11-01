@@ -1,9 +1,8 @@
-name: easy-cabinet
+name: pro-cabinet
 
 services:
-
   frontend:
-    container_name: easycabinet-frontend
+    container_name: pro-cabinet-frontend
     ports:
       - ${WEB_PORT}:80
     build:
@@ -11,10 +10,10 @@ services:
       dockerfile: Dockerfile
     networks:
       - aurora-network
-    restart: always
+    restart: unless-stopped
 
   backend:
-    container_name: easycabinet-backend
+    container_name: pro-cabinet-backend
     build:
       context: packages/backend
       dockerfile: Dockerfile
@@ -24,7 +23,7 @@ services:
       - keydb
       - mysql
       - minio
-    restart: always
+    restart: unless-stopped
 
   minio:
     image: bitnami/minio:latest
@@ -34,7 +33,7 @@ services:
       - MINIO_BROWSER=off
     networks:
       - aurora-network
-    #restart: always
+    #restart: unless-stopped
 
   keydb:
     image: bitnami/keydb:latest
@@ -43,7 +42,7 @@ services:
       - ALLOW_EMPTY_PASSWORD=yes
     networks:
       - aurora-network
-    #restart: always
+    #restart: unless-stopped
 
   mysql:
     image: mysql:lts
@@ -55,7 +54,7 @@ services:
       - MYSQL_DATABASE=mine
       - MYSQL_USER=mine
       - MYSQL_PASSWORD=mine
-    #restart: always
+    #restart: unless-stopped
 
 networks:
   aurora-network:

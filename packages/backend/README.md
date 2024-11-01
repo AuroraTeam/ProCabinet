@@ -8,46 +8,42 @@
 
 К сожалению на Windows не получится запустить `KeyDB` так что рекомендуем использовать для ваc Docker
 
-## Настройка KeyDB 
+## Настройка KeyDB
 
 Его не нужно настраивать достаточно просто установить.
 
 ## Настройка MinIO
 
-Заходим на админ панель по адресу `http://localhost:9001` и авторизуемся под аккаунтом по умолчанию (логин `admin`, пароль `password`).  
+Заходим на админ панель по адресу `http://localhost:9001` и авторизуемся под аккаунтом по умолчанию (логин `admin`, пароль `password`).
 Переходим во вкладку `Buckets` и создаём хранилище. `Access Policy` у хранилище должно быть `Custom` с такими настройками:
+
 ```json
-   {
-    "Version": "2012-10-17",
-    "Statement": [
-        {
-            "Effect": "Allow",
-            "Principal": {
-                "AWS": [
-                    ""
-                ]
-            },
-            "Action": [
-                "s3:GetObject"
-            ],
-            "Resource": [
-                "arn:aws:s3:::ИМЯ_ХРАНИЛИЩА/*"
-            ]
-        }
-    ]
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": [""]
+      },
+      "Action": ["s3:GetObject"],
+      "Resource": ["arn:aws:s3:::ИМЯ_ХРАНИЛИЩА/*"]
+    }
+  ]
 }
 ```
 
-## Настройка MySQL 
+## Настройка MySQL
 
 Нужно создать базу данных:
+
 ```sql
 CREATE DATABASE `НАЗВАНИЕ_БАЗЫ`
 ```
 
 # Настройка
 
-Переименуйте файл [.env.example](https://github.com/AuroraTeam/EasyCabinet/blob/master/packages/backend/.env.example) в `.env`.  
+Переименуйте файл [.env.example](https://github.com/AuroraTeam/ProCabinet/blob/master/packages/backend/.env.example) в `.env`.
 
 В этом файле будут храниться ваши настройки:
 
@@ -70,9 +66,10 @@ CREATE DATABASE `НАЗВАНИЕ_БАЗЫ`
 - `S3_BUCKET` - Название хранилища в Minio сервера
 - `S3_PUBLIC_URL` - Адрес до Minio сервера (внешний)
 
-# Запуск 
+# Запуск
 
 Собираем проект и запускаем сервер.
+
 ```
 npm run build
 

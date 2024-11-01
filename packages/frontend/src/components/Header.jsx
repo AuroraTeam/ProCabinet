@@ -14,7 +14,7 @@ export function Header() {
       <a href="/" className="flex items-center gap-4">
         <img src="/logo.png" className="w-10" alt="Logo" />
         <span className="hidden sm:inline text-xl font-extralight">
-          Easy Cabinet
+          Pro Cabinet
         </span>
       </a>
       {isAuthed() ? (
