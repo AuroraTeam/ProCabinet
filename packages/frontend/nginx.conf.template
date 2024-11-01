@@ -13,7 +13,7 @@ server {
     }
 
     location /api/ {
-        proxy_pass http://procabinet-backend:4000/;
+        proxy_pass http://pro-cabinet-backend:4000/;
     }
 
     location /object/ {
